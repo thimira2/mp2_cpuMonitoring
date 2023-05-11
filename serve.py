@@ -1,3 +1,11 @@
+from flask import Flask, request, jsonify
+import subprocess
+import socket
+
+app = Flask(__name__)
+
+# @app.route('/stress_cpu', methods=['POST'])
+@app.post("/")
 def stress_cpu():
     # Start stress_cpu.py in a separate process
     subprocess.Popen(['python3', 'stress_cpu.py'])
